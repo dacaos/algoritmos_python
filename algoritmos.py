@@ -63,3 +63,23 @@ x = int(input("Digite el numero: "))
 y = getMayor(x)
 
 print("EL numero mayor formado es: "+str(y))
+
+## metodo para saber si un numero es primo
+def es_primo(numero):
+    for i in range(2,numero):
+        if (numero%i)==0:
+            # es divisible
+            return False
+    return True
+ 
+while True:
+    try:
+        numero = int(raw_input("inserta un numero (0) salir >> "))
+        if numero==0:
+            break
+        if es_primo(numero):
+            print "\nEl numero %s es primo" % numero
+        else:
+            print "\nEl numero %s NO es primo" % numero
+    except:
+        print "\nEl numero tiene que ser entero"
